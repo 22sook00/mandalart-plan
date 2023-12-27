@@ -1,28 +1,28 @@
 import { useFormContext } from "react-hook-form";
 
-import * as SC from "../styles/input.styles";
+import * as SC from "../../styles/input.styles";
 
 interface InputProps {
   type?: any;
-  textarea: boolean;
-  errorMsg: string;
-  placeholder: string;
+  textarea?: boolean;
+  errorMsg?: string;
+  placeholder?: string;
   value: string;
-  readOnly: boolean;
-  required?: boolean;
+  readOnly?: boolean;
+  required?: boolean | any;
   validatePattern?: any;
   blurEvent?: () => void;
   changeEvent?: (e?: any) => void;
   validateFunc?: any;
-  maxTextLength: number;
-  maxLength: number;
-  errFocus: any;
-  textLength: number;
+  maxTextLength?: number;
+  maxLength?: number;
+  errFocus?: any;
+  textLength?: number;
   textLengthInner?: boolean;
   style?: any;
 }
 
-const InputForm = ({
+const Input = ({
   type = "text",
   textarea = false,
   errorMsg,
@@ -35,9 +35,9 @@ const InputForm = ({
   changeEvent,
   validateFunc,
   maxTextLength = 1000,
-  maxLength,
+  maxLength = 100,
   errFocus,
-  textLength,
+  textLength = 0,
   textLengthInner = false,
   style,
   ...props
@@ -91,6 +91,7 @@ const InputForm = ({
             readOnly={readOnly}
             errors={errors[value] || errFocus}
             type={type}
+            autoComplete="off"
             placeholder={placeholder}
             {...register(value, {
               validate: validateFunc && {
@@ -109,16 +110,13 @@ const InputForm = ({
               required: required,
             })}
             maxLength={maxLength}
+            style={style}
             {...props}
           />
           {(() => {
             const err = errors[value] || errFocus;
             if (err && err.message) {
-              return (
-                <p style={{ textAlign: "right" }} className="errorText">
-                  {err.message}
-                </p>
-              );
+              return <SC.InputErrorText>{err.message}</SC.InputErrorText>;
             }
           })()}
         </>
@@ -127,4 +125,4 @@ const InputForm = ({
   );
 };
 
-export default InputForm;
+export default Input;

@@ -24,9 +24,16 @@ const commonInput = css`
   }
 `;
 
+export const FormContainer = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
 export const InputContainer = styled.div`
   position: relative;
   width: 100%;
+  height: 62px;
 `;
 export const InputLabelContainer = styled(FlexSC.FlexBox)`
   display: -webkit-box;
@@ -46,26 +53,35 @@ export const InputLabelContainer = styled(FlexSC.FlexBox)`
 
 export const InputForm = styled.input<InputType>`
   ${commonInput}
-  height: ${({ customHeight }) => customHeight ?? "34px"};
-  padding: 0 10px;
-  background-color: ${({ readOnly }) =>
-    readOnly ? color.disabledText : "#fff"};
+  height: ${({ customHeight }) => customHeight ?? "42px"};
+
+  /*background-color: ${({ readOnly }) =>
+    readOnly ? color.lightestGray : "#fff"};*/
   cursor: ${({ readOnly }) => readOnly && "auto"};
   color: ${({ readOnly }) => (readOnly ? color.textLight : color.textDefault)};
-  border: ${({ errors }) =>
+
+  border: none;
+  border-bottom: ${({ errors }) =>
     errors
-      ? `1px solid ${color.errorText} `
-      : `1px solid ${color.textLight}`} !important;
+      ? `2px solid ${color.errorText} `
+      : `2px solid ${color.successText}`} !important;
   border-radius: 0px !important;
+  border-bottom: ${({ readOnly }) =>
+    readOnly && `2px solid  #e0e4eb`} !important;
+
+  padding: 4px;
+  font-size: 16px;
+
   &:focus,
   &:active {
     outline: none;
     transition: all 0.3s;
-    border: ${({ readOnly }) => readOnly && `1px solid  #e0e4eb`} !important;
+    border-bottom: ${({ readOnly }) =>
+      readOnly && `2px solid  #e0e4eb`} !important;
   }
   &::placeholder {
     color: ${color.placeholderText};
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 export const TextareaForm = styled.textarea<InputType>`
@@ -77,7 +93,7 @@ export const TextareaForm = styled.textarea<InputType>`
   padding: 10px;
   white-space: pre-line;
   background-color: ${({ readOnly }) =>
-    readOnly ? color.disabledText : "#fff"};
+    readOnly ? color.lightestGray : "#fff"};
 
   cursor: ${({ readOnly }) => readOnly && "auto"};
   color: ${({ readOnly }) => (readOnly ? color.textLight : color.textDefault)};
@@ -139,4 +155,10 @@ export const TextareaFormLength = styled.span`
   span {
     color: ${color.textLight};
   }
+`;
+export const InputErrorText = styled.p`
+  font-size: 10px;
+  text-align: right;
+  color: ${color.errorText};
+  margin-top: 4px;
 `;

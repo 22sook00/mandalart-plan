@@ -1,21 +1,19 @@
 import { useState } from "react";
 import { SookButton, SookFlex } from "react-sook-style";
-import Dialog from "./components/Dialog";
+import GroupButton from "./components/common/GroupButton";
 import Mandalart from "./components/Mandalart";
+import { Link } from "react-router-dom";
+import Init from "./components/Init/Init";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <SookFlex
       justify="center"
       item="center"
       customStyle={{ padding: "0 40px" }}
     >
-      <SookButton onClick={() => setIsOpen(true)}>temp click</SookButton>
-      {isOpen && (
-        <Dialog handleClosePopup={() => setIsOpen(false)}>hihihi</Dialog>
-      )}
-      <Mandalart />
+      {/*<Mandalart />*/}
+      <Init />
     </SookFlex>
   );
 }

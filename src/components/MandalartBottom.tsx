@@ -1,7 +1,7 @@
 import React from "react";
 import { SookButton, SookFlex, SookGrid } from "react-sook-style";
 import * as SC from "../styles/mandalart.styles";
-import Progress from "./Progress";
+import Progress from "./common/Progress";
 
 const MandalartBottom = () => {
   return (

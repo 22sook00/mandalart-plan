@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { color } from "./globalStyle";
-import { GridBox } from "./grid.styles";
 import { keyframes } from "@emotion/react";
 import { FlexBox, FlexCol } from "./flex.styles";
 
@@ -66,26 +65,28 @@ export const PopupTitle = styled.h2`
     line-height: 15px;
   }
 `;
-export const PopupButtonWrapper = styled(FlexBox)`
-  gap: 10px;
-`;
+
 // 카드팝업
 export const CardPopupLayer = styled(FlexCol)`
   ${popupLayer};
-  padding: 0 18px;
   align-items: center;
   justify-content: center;
 `;
 export const CardPopupContainer = styled.div<DialogType>`
   position: relative;
-  width: ${({ customStyle }) => (customStyle ? customStyle : "340px")};
+  /*width: ${({ customStyle }) => (customStyle ? customStyle : "340px")};*/
   display: flex;
   flex-direction: column;
   background-color: white;
   animation: ${showModalBox} 0.3s;
-  box-shadow: 0 5px 5px rgb(0 0 0 / 5%), 0 10px 30px rgb(0 0 0 / 20%);
+
+  /*height: 350px;
+  width: 350px;*/
   overflow: hidden;
-  padding: 30px 30px 20px 30px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 24px 20px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
   .showBorder {
     z-index: 100;
@@ -98,14 +99,10 @@ export const CardPopupContainer = styled.div<DialogType>`
   }
 `;
 export const CardPopupBody = styled(FlexBox)<DialogType>`
-  min-height: 77px;
-  margin-bottom: 15px;
-  padding: 10px 0;
-  height: ${({ customHeight }) => (customHeight ? customHeight : "auto")};
-  div {
-    max-height: ${({ customHeight }) =>
-      customHeight ? customHeight : "162px"};
-    overflow-y: auto;
+  height: ${({ customHeight }) => (customHeight ? customHeight : "100%")};
+  overflow-y: auto;
+  > div {
+    height: 100%;
   }
 `;
 export const CardPopupDescription = styled.div`

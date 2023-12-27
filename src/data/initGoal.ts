@@ -1,3 +1,12 @@
+export const MandalartInitType = {
+  id: 1,
+  isMain: true,
+  code: "mainGoal",
+  goal: "",
+  desc: "",
+  includes: [],
+};
+
 export const MandalartData = [
   {
     id: 1,

@@ -1,5 +1,5 @@
 import React from "react";
-import * as SC from "../styles/mandalart.styles";
+import * as SC from "../../styles/mandalart.styles";
 
 const Progress = () => {
   return (

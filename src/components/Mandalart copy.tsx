@@ -39,31 +39,34 @@ const Mandalart = () => {
           </SC.MandalartBTN>
         </FlexSC.FlexBox>
         <SC.MandalartGridContainer onClick={handleContainerClick}>
-          <SC.MandalartDIV isActive={isActive} className="container">
+          <SC.MandalartContentContainer
+            isActive={isActive}
+            className="container"
+          >
             <p className="title">🍊 주요 목표를 입력해주세요.</p>
             <SC.MandalartINPUT placeholder="주요 목표" />
-          </SC.MandalartDIV>
+          </SC.MandalartContentContainer>
         </SC.MandalartGridContainer>
-        <SC.MandalartDIV>
+        <SC.MandalartContentContainer>
           <p className="title">🍊주요 목표를 입력해주세요.</p>
           <SC.MandalartINPUT placeholder="주요 목표" />
-        </SC.MandalartDIV>
-        <SC.MandalartDIV>
+        </SC.MandalartContentContainer>
+        <SC.MandalartContentContainer>
           <p className="title">🍊 주요 목표를 입력해주세요.</p>
           <SC.MandalartINPUT placeholder="주요 목표" />
-        </SC.MandalartDIV>
-        <SC.MandalartDIV>
+        </SC.MandalartContentContainer>
+        <SC.MandalartContentContainer>
           <p className="title">🍊 주요 목표를 입력해주세요.</p>
           <SC.MandalartINPUT placeholder="주요 목표" />
-        </SC.MandalartDIV>
-        <SC.MandalartDIV primary>
+        </SC.MandalartContentContainer>
+        <SC.MandalartContentContainer primary>
           <p className="title">🍒 핵심 목표를 입력해주세요.</p>
           <SC.MandalartINPUT placeholder="핵심 목표" />
-        </SC.MandalartDIV>
-        <SC.MandalartDIV>
+        </SC.MandalartContentContainer>
+        <SC.MandalartContentContainer>
           <p className="title">🍊 주요 목표를 입력해주세요.</p>
           <SC.MandalartINPUT placeholder="주요 목표" />
-        </SC.MandalartDIV>
+        </SC.MandalartContentContainer>
       </SookGrid>
     </SC.MandalartContainer>
   );

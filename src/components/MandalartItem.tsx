@@ -5,7 +5,7 @@ import * as SC from "../styles/mandalart.styles";
 import { useState } from "react";
 import { useEffect } from "react";
 
-interface MandalartItemDataProps {
+export interface MandalartItemDataProps {
   id: number;
   isMain?: boolean;
   code: string;
@@ -16,8 +16,12 @@ interface MandalartItemDataProps {
 
 interface MandalartItemProps {
   MandalartSubData?: MandalartItemDataProps;
+  handleOpenDialog: (list?: string) => void;
 }
-const MandalartItem = ({ MandalartSubData }: MandalartItemProps) => {
+const MandalartItem = ({
+  MandalartSubData,
+  handleOpenDialog,
+}: MandalartItemProps) => {
   const [subList, setSubList] = useState<MandalartItemDataProps | undefined>(
     MandalartSubData
   );
@@ -50,7 +54,10 @@ const MandalartItem = ({ MandalartSubData }: MandalartItemProps) => {
           {MandalartData.map((list) => {
             return (
               <Fragment key={`${list.id}-${list.goal}`}>
-                <SookCard onClick={() => console.log(list)} size="sm">
+                <SookCard
+                  onClick={() => handleOpenDialog(list?.goal)}
+                  size="sm"
+                >
                   {list.goal}
                 </SookCard>
               </Fragment>
@@ -62,7 +69,7 @@ const MandalartItem = ({ MandalartSubData }: MandalartItemProps) => {
           {subList?.includes?.map((list, idx) => {
             return (
               <Fragment key={idx}>
-                <SookCard onClick={() => console.log(list)} size="sm">
+                <SookCard onClick={() => handleOpenDialog(list)} size="sm">
                   {list}
                 </SookCard>
               </Fragment>

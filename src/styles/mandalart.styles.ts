@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { FlexCol } from "./flex.styles";
 import { color } from "./globalStyle";
 import { GridBox } from "./grid.styles";
 
@@ -14,6 +15,10 @@ const defaultLayout = css`
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const MandalartContainer = styled.div`
@@ -34,12 +39,52 @@ export const MandalartContainer = styled.div`
     }
   }
 `;
-export const MandalartTitle = styled.h1`
-  font-weight: bold;
-  font-size: 32px;
-  margin-bottom: 20px;
+export const MandalartStep1Wrapper = styled.div<MandalartType>`
+  width: 500px;
+  height: 500px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  /*gap: 10px;*/
+
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+
+  background-color: ${({ primary }) => (primary ? "#f9f9fb" : "#fff")};
+  transform: ${({ isActive }) =>
+    isActive ? "scale(1.3) translateX(2.75rem)" : "scale(1) translateX(0)"};
+  transition: transform 0.3s ease-in-out, margin-right 0.5s ease-in-out;
+  z-index: ${({ isActive }) => (isActive ? "100" : "1")};
+  position: ${({ isActive }) => (isActive ? "absolute" : "static")};
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: ${color.textDark};
+  }
 `;
 
+export const MandalartTitle = styled.h1`
+  font-weight: 900;
+  font-size: 60px;
+  font-style: italic;
+  color: ${color.lightGray};
+`;
+export const MandalartStep1FormWrapper = styled.div`
+  margin-top: 70px;
+  height: calc(100% - 200px);
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sook_button {
+    width: 100%;
+  }
+`;
 export const MandalartGridContainer = styled(GridBox)`
   cursor: pointer;
   border: 3px solid #f9f9fb !important;
@@ -85,22 +130,24 @@ export const MandalartProgressText = styled.div<MandalartType>`
   align-items: center;
   justify-content: ${({ step }) => (step === 3 ? " flex-end" : " flex-start")};
 `;
-export const MandalartDIV = styled.div<MandalartType>`
-  height: 250px;
-  width: 250px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  padding: 24px 20px;
+export const MandalartContentContainer = styled.div<MandalartType>`
+  /*width: 250px;*/
+  height: 200px;
+  padding: 14px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 30px;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
   .title {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
+    color: ${color.textDark};
   }
+
   background-color: ${({ primary }) => (primary ? "#f9f9fb" : "#fff")};
   transform: ${({ isActive }) =>
     isActive ? "scale(1.3) translateX(2.75rem)" : "scale(1) translateX(0)"};
@@ -122,10 +169,10 @@ export const MandalartINPUT = styled.input`
     font-size: 14px;
   }
 `;
-export const MandalartBTN = styled.button`
+export const MandalartBTN = styled.button<{ size?: string }>`
   border: none;
   border-radius: 6px;
-  width: 100%;
+  width: ${({ size }) => (size === "full" ? "100%" : "100px")};
   height: 34px;
   cursor: pointer;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
