@@ -6,11 +6,15 @@ import Form from "../components/common/Form";
 import MandalartFormContent from "../components/MandalartFormContent";
 
 import { step2State } from "../atoms/mandalartAtom";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import MandalartBottom from "../components/MandalartBottom";
+import { errorButtonState } from "../atoms/errorAtom";
 
 const Step2 = () => {
   const navigate = useNavigate();
   const setSubGoal = useSetRecoilState(step2State);
+
+  const isError = useRecoilValue(errorButtonState);
 
   const handleSubmitSubGoal = (data: any) => {
     console.log("STEP@", data);
@@ -41,13 +45,7 @@ const Step2 = () => {
             );
           })}
         </SookGrid>
-        <SookFlex gap={10} col={false} justify="flex-end">
-          <SC.MandalartBTN type="button" onClick={() => navigate("/step1")}>
-            Prev
-          </SC.MandalartBTN>
-
-          <SC.MandalartBTN>NEXT</SC.MandalartBTN>
-        </SookFlex>
+        <MandalartBottom prevUrl="/step1" nextDisabled={isError} />
       </Form>
     </SC.MandalartContainer>
   );

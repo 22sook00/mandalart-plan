@@ -4,17 +4,17 @@ import { FlexCol } from "./flex.styles";
 import { color } from "./globalStyle";
 import { GridBox } from "./grid.styles";
 
-type MandalartType = {
+export type MandalartType = {
   step?: number;
   primary?: boolean;
   isActive?: boolean;
 };
 
-const defaultLayout = css`
+export const defaultLayout = css`
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ const defaultLayout = css`
 export const MandalartContainer = styled.div`
   ${defaultLayout}
   height: 100vh;
-  padding: 20px 0;
+  padding: 20px 20px 120px;
   overflow: hidden;
   .sook_card {
     min-height: 70px !important;
@@ -39,39 +39,28 @@ export const MandalartContainer = styled.div`
     }
   }
 `;
-export const MandalartStep1Wrapper = styled.div<MandalartType>`
-  width: 500px;
-  height: 500px;
-  padding: 24px;
+export const MandalartTitle = styled.h1`
+  font-weight: 800;
+  font-size: 38px;
+  color: ${color.textDark};
+`;
+export const MandalartSubTitle = styled.h3`
+  font-weight: 800;
+  font-size: 24px;
 
+  color: ${color.lightGray};
+`;
+
+export const MandalartStep1Wrapper = styled.div<MandalartType>`
   display: flex;
   flex-direction: column;
-  /*gap: 10px;*/
-
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-
-  background-color: ${({ primary }) => (primary ? "#f9f9fb" : "#fff")};
-  transform: ${({ isActive }) =>
-    isActive ? "scale(1.3) translateX(2.75rem)" : "scale(1) translateX(0)"};
-  transition: transform 0.3s ease-in-out, margin-right 0.5s ease-in-out;
-  z-index: ${({ isActive }) => (isActive ? "100" : "1")};
-  position: ${({ isActive }) => (isActive ? "absolute" : "static")};
 
   .title {
     font-size: 24px;
     font-weight: 700;
-    color: ${color.textDark};
   }
 `;
 
-export const MandalartTitle = styled.h1`
-  font-weight: 900;
-  font-size: 60px;
-  font-style: italic;
-  color: ${color.lightGray};
-`;
 export const MandalartStep1FormWrapper = styled.div`
   margin-top: 70px;
   height: calc(100% - 200px);
@@ -92,44 +81,6 @@ export const MandalartGridContainer = styled(GridBox)`
   padding: 4px;
 `;
 
-export const MandalartBottom = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  border-top: 1px solid ${color.lightGray};
-  background-color: #fff;
-  padding: 20px 0;
-  > div {
-    ${defaultLayout}
-  }
-`;
-
-export const MandalartProgress = styled.div`
-  width: 100%;
-  height: 8px;
-  border-radius: 100px;
-  background-color: #f9f9fb;
-`;
-export const MandalartProgressBar = styled.div<MandalartType>`
-  width: ${({ step }) => `${step ? step * 33.3 : 0}%`};
-  height: 8px;
-  border-radius: 100px;
-  background-color: #fe9748;
-  transition: all 0.3s;
-`;
-
-export const MandalartProgressText = styled.div<MandalartType>`
-  width: 100%;
-  color: #fe9748;
-  margin-top: 8px;
-  text-align: center;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: ${({ step }) => (step === 3 ? " flex-end" : " flex-start")};
-`;
 export const MandalartContentContainer = styled.div<MandalartType>`
   /*width: 250px;*/
   height: 200px;
@@ -155,6 +106,76 @@ export const MandalartContentContainer = styled.div<MandalartType>`
   z-index: ${({ isActive }) => (isActive ? "100" : "1")};
   position: ${({ isActive }) => (isActive ? "absolute" : "static")};
 `;
+
+export const MandalartStep3ListContainer = styled.div`
+  /*height: 630px;*/
+  border-radius: 8px;
+  .title {
+    margin-bottom: 30px;
+  }
+  .card {
+    width: 100%;
+    border-radius: 6px;
+    height: 170px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid ${color.border};
+    color: ${color.textLight};
+    /*box-shadow: ${color.defaultShadow};*/
+    &:hover {
+      transition: all 0.3s;
+      background-color: rgb(248 250 252);
+      color: ${color.textDefault};
+    }
+  }
+  .card-item {
+    font-size: 24px;
+    font-weight: 700;
+  }
+`;
+export const MandalartStep3FormContainer = styled.div`
+  margin-top: 87px;
+`;
+export const MandalartStep3List = styled.div`
+  height: 538px;
+  border-radius: 8px;
+`;
+export const MandalartStep3Form = styled.div`
+  height: 538px;
+  overflow: scroll;
+  /*border: 1px solid ${color.border};*/
+  background-color: ${color.hover};
+  box-shadow: ${color.defaultShadow};
+  padding: 20px;
+  border-radius: 6px;
+  > div {
+    height: fit-content;
+    margin-bottom: 16px;
+  }
+  .icon {
+    font-size: 24px;
+  }
+  .subTitle {
+    color: ${color.textDefault};
+  }
+  input {
+    outline: none;
+    border: none;
+    padding: 6px 8px;
+    font-size: 16px;
+    height: 40px;
+    width: 230px;
+    background-color: ${color.hover};
+    border-bottom: 2px solid ${color.lightestGray};
+    &::placeholder {
+      color: #bfc5cb;
+      font-size: 14px;
+    }
+  }
+`;
+
 export const MandalartINPUT = styled.input`
   border: none;
   border-bottom: 2px solid #0dc490;

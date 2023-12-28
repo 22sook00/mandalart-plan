@@ -6,25 +6,20 @@ export const color = {
 
   textDark: "#0f172a",
   textDefault: "#334155",
-  textLight: "#8690a4",
+  textLight: "#5e6a7e",
   placeholderText: "#64748b",
   disabledText: "#cbd5e1",
   errorText: "#ff3c78",
   successText: "#17b9aa",
 
-  baseBg: "#212529",
-  primaryBg: "#223244",
-  secondaryBg: "#F5F7FE",
-  defaultBorder: "#dee2e6",
-  blue30: "#8ea1f3",
-  //Hierarchy 4,5,6
+  border: "#d7dde7",
+
   defaultGray: "#dee2e6",
   lightGray: "#c1c8cf",
   lightestGray: "#e4ebf4",
 
   hover: "#fafcff",
 
-  //shadow
   defaultShadow:
     "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
 };
@@ -39,7 +34,6 @@ export const globalStyles = css`
     margin: 0;
     padding: 0;
     font: inherit;
-    color: ${color.textDefault};
     box-sizing: border-box;
     font-family: "SUIT" !important;
   }

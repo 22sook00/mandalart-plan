@@ -8,17 +8,16 @@ import Input from "../components/common/Input";
 import { INPUT_ERROR, INPUT_PLACEHOLDER } from "../data/formData";
 
 import { useNavigate } from "react-router-dom";
-import { SookButton } from "react-sook-style";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { step1State } from "../atoms/mandalartAtom";
+import MandalartBottom from "../components/MandalartBottom";
+import { errorButtonState } from "../atoms/errorAtom";
 
 const Step1 = () => {
   const navigate = useNavigate();
   const setMainGoal = useSetRecoilState(step1State);
-
+  const isError = useRecoilValue(errorButtonState);
   const handleSubmitGoal = (data: any) => {
-    console.log("DATA", data);
-
     setMainGoal(data);
     navigate("/step2");
   };
@@ -26,8 +25,9 @@ const Step1 = () => {
   return (
     <SC.MandalartContainer>
       <SC.MandalartStep1Wrapper>
-        <SC.MandalartTitle>STEP 1.</SC.MandalartTitle>
-        <h1 className="title">🍒 핵심 목표를 입력해주세요.</h1>
+        <SC.MandalartSubTitle>STEP 1.</SC.MandalartSubTitle>
+        <SC.MandalartTitle>🍒 핵심 목표를 입력해주세요.</SC.MandalartTitle>
+
         <SC.MandalartStep1FormWrapper>
           <Form onSubmit={handleSubmitGoal} type="mainGoal">
             <Input
@@ -41,7 +41,7 @@ const Step1 = () => {
               style={{ height: "43px" }}
             />
 
-            <SC.MandalartBTN size={"full"}>NEXT</SC.MandalartBTN>
+            <MandalartBottom nextDisabled={isError} />
           </Form>
         </SC.MandalartStep1FormWrapper>
       </SC.MandalartStep1Wrapper>

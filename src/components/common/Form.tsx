@@ -1,6 +1,9 @@
 import React from "react";
+import { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import { useSetRecoilState } from "recoil";
 import * as SC from "../../styles/input.styles";
+import { errorButtonState } from "../../atoms/errorAtom";
 
 interface FormProps {
   children: React.ReactNode;
@@ -9,6 +12,7 @@ interface FormProps {
 }
 
 const Form = ({ type, children, onSubmit }: FormProps) => {
+  const setErrorButton = useSetRecoilState(errorButtonState);
   const methods = useForm<any>({
     mode: "onChange",
     defaultValues: {},
@@ -17,6 +21,11 @@ const Form = ({ type, children, onSubmit }: FormProps) => {
     handleSubmit,
     formState: { errors },
   } = methods;
+
+  useEffect(() => {
+    const isError = Object.keys(errors)?.length ? true : false;
+    setErrorButton(isError);
+  });
 
   return (
     <FormProvider {...methods}>

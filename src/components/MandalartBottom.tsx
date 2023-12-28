@@ -1,30 +1,55 @@
 import React from "react";
-import { SookButton, SookFlex, SookGrid } from "react-sook-style";
-import * as SC from "../styles/mandalart.styles";
+import { SookButton, SookFlex } from "react-sook-style";
+import * as SC from "../styles/bottom.styles";
 import Progress from "./common/Progress";
 
-const MandalartBottom = () => {
+import ChevronLeftIcon from "./common/icons/chevronLeft";
+import ChevronRightIcon from "./common/icons/chevronRight";
+import { useNavigate } from "react-router-dom";
+import { color } from "../styles/globalStyle";
+
+interface MandalartBottomProps {
+  prevDisabled?: boolean;
+  nextDisabled?: boolean;
+  prevUrl?: string;
+}
+
+const MandalartBottom = ({
+  prevDisabled = false,
+  nextDisabled = false,
+  prevUrl = "/",
+}: MandalartBottomProps) => {
+  const navigate = useNavigate();
+
   return (
-    <SC.MandalartBottom>
-      <SookGrid col="1fr 200px" item="center">
-        <Progress />
-        <SookFlex col={false} justify="flex-end">
-          <SookButton theme="light" onClick={() => console.log("reset")}>
-            리셋
-          </SookButton>
-          <SookButton
-            theme="success"
-            //customStyle={{ background: "#1dcd9b" }}
-            onClick={() => console.log("prev")}
-          >
-            이전
-          </SookButton>
-          <SookButton theme="success" onClick={() => console.log("next")}>
-            다음
-          </SookButton>
-        </SookFlex>
-      </SookGrid>
-    </SC.MandalartBottom>
+    <SC.BottomContainer>
+      <Progress />
+      <SookFlex col={false} gap={10} justify="space-between">
+        <SC.BottomButton
+          position={"left"}
+          disabled={prevDisabled}
+          type="button"
+          onClick={() => navigate(prevUrl)}
+        >
+          <ChevronLeftIcon
+            color={prevDisabled ? color.disabledText : color.textLight}
+            size={14}
+          />
+          Back
+        </SC.BottomButton>
+        <SC.BottomButton
+          disabled={nextDisabled}
+          position={"right"}
+          type="submit"
+        >
+          Next
+          <ChevronRightIcon
+            color={nextDisabled ? color.disabledText : color.textLight}
+            size={14}
+          />
+        </SC.BottomButton>
+      </SookFlex>
+    </SC.BottomContainer>
   );
 };
 
