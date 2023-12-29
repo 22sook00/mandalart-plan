@@ -1,7 +1,7 @@
 import React from "react";
 import { IconProps } from "./chevronRight";
 
-const chevronLeftIcon = ({ size = 20, color }: IconProps) => {
+const chevronLeftIcon = ({ size = 20, color, onClick }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const chevronLeftIcon = ({ size = 20, color }: IconProps) => {
       width={`${size}px`}
       height={`${size}px`}
       color={color}
+      onClick={onClick}
     >
       <path
         strokeLinecap="round"

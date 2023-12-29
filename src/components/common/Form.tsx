@@ -21,7 +21,6 @@ const Form = ({ type, children, onSubmit }: FormProps) => {
     handleSubmit,
     formState: { errors },
   } = methods;
-
   useEffect(() => {
     const isError = Object.keys(errors)?.length ? true : false;
     setErrorButton(isError);
@@ -31,13 +30,6 @@ const Form = ({ type, children, onSubmit }: FormProps) => {
     <FormProvider {...methods}>
       <SC.FormContainer onSubmit={handleSubmit(onSubmit)}>
         {children}
-
-        {/*<GroupButton
-          confirmText="다음"
-          handleConfirmPopup={handleSubmit(onSubmit)}
-          handleClosePopup={handleClosePopup}
-          disabled={errors[value]?.message ? true : false}
-        />*/}
       </SC.FormContainer>
     </FormProvider>
   );

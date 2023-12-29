@@ -14,7 +14,7 @@ export const defaultLayout = css`
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,22 +23,12 @@ export const defaultLayout = css`
 
 export const MandalartContainer = styled.div`
   ${defaultLayout}
+  position: relative;
   height: 100vh;
   padding: 20px 20px 120px;
   overflow: hidden;
-  .sook_card {
-    min-height: 70px !important;
-    section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      padding: 0 14px !important;
-      color: ${color.lightGray};
-      font-size: 12px;
-    }
-  }
 `;
+
 export const MandalartTitle = styled.h1`
   font-weight: 800;
   font-size: 38px;
@@ -74,12 +64,6 @@ export const MandalartStep1FormWrapper = styled.div`
     width: 100%;
   }
 `;
-export const MandalartGridContainer = styled(GridBox)`
-  cursor: pointer;
-  border: 3px solid #f9f9fb !important;
-  border-radius: 8px;
-  padding: 4px;
-`;
 
 export const MandalartContentContainer = styled.div<MandalartType>`
   /*width: 250px;*/
@@ -113,51 +97,29 @@ export const MandalartStep3ListContainer = styled.div`
   .title {
     margin-bottom: 30px;
   }
-  .card {
-    width: 100%;
-    border-radius: 6px;
-    height: 170px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid ${color.border};
-    color: ${color.textLight};
-    /*box-shadow: ${color.defaultShadow};*/
-    &:hover {
-      transition: all 0.3s;
-      background-color: rgb(248 250 252);
-      color: ${color.textDefault};
-    }
-  }
-  .card-item {
-    font-size: 24px;
-    font-weight: 700;
-  }
 `;
-export const MandalartStep3FormContainer = styled.div`
-  margin-top: 87px;
-`;
+export const MandalartStep3FormContainer = styled.div``;
 export const MandalartStep3List = styled.div`
   height: 538px;
   border-radius: 8px;
 `;
 export const MandalartStep3Form = styled.div`
-  height: 538px;
-  overflow: scroll;
-  /*border: 1px solid ${color.border};*/
-  background-color: ${color.hover};
-  box-shadow: ${color.defaultShadow};
-  padding: 20px;
   border-radius: 6px;
   > div {
     height: fit-content;
-    margin-bottom: 16px;
+    margin-bottom: 26px;
   }
   .icon {
-    font-size: 24px;
+    width: 43px;
+    height: 43px;
+    text-align: center;
+    font-size: 28px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid ${color.lightestGray};
   }
   .subTitle {
+    font-size: 32px;
     color: ${color.textDefault};
   }
   input {
@@ -165,46 +127,80 @@ export const MandalartStep3Form = styled.div`
     border: none;
     padding: 6px 8px;
     font-size: 16px;
-    height: 40px;
-    width: 230px;
+    height: 43px;
+    width: 350px;
+    border-radius: 8px;
+    /*box-shadow: ${color.defaultShadow};*/
     background-color: ${color.hover};
-    border-bottom: 2px solid ${color.lightestGray};
     &::placeholder {
       color: #bfc5cb;
       font-size: 14px;
     }
   }
-`;
-
-export const MandalartINPUT = styled.input`
-  border: none;
-  border-bottom: 2px solid #0dc490;
-  padding: 4px;
-  font-size: 16px;
-  z-index: 10;
-  &:active,
-  &:focus {
-    outline: none;
-  }
-  &::placeholder {
-    font-size: 14px;
+  p {
+    width: 350px;
   }
 `;
-export const MandalartBTN = styled.button<{ size?: string }>`
-  border: none;
+export const MandalartStep3Card = styled.div<{ disabled?: boolean }>`
+  width: 100%;
   border-radius: 6px;
-  width: ${({ size }) => (size === "full" ? "100%" : "100px")};
-  height: 34px;
-  cursor: pointer;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  background: red;
-  font-weight: 600;
-  color: #fff;
-  background-color: #1dcd9b;
-
-  &:active {
-    transition: all 0.4s;
-    transform: scale(0.97);
-    background-color: #0abd8a;
+  height: 170px;
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  background-color: ${({ disabled }) =>
+    disabled ? "rgb(248 250 252)" : "#fff"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid ${color.border};
+  color: ${({ disabled }) => (disabled ? color.lightGray : color.textLight)};
+  /*box-shadow: ${color.defaultShadow};*/
+  &:hover {
+    transition: all 0.3s;
+    background-color: ${({ disabled }) => !disabled && "rgb(248 250 252)"};
+    color: ${({ disabled }) => !disabled && color.textDefault};
   }
+
+  .card-item {
+    font-size: 24px;
+    font-weight: 700;
+  }
+`;
+
+export const MandalartCompleteContainer = styled.div`
+  ${defaultLayout}
+  overflow: scroll;
+  height: 100%;
+  .sook_card {
+    height: 70px !important;
+    min-height: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    > section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 4px !important;
+      font-size: 10px;
+      text-align: center;
+      line-height: 14px;
+      white-space: normal !important;
+
+      width: 70px;
+      height: 70px !important;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+`;
+export const MandalartGridContainer = styled(GridBox)`
+  border: 3px solid #f9f9fb !important;
+  border-radius: 8px;
+  padding: 20px 40px;
+  margin-top: 20px;
+  margin-bottom: 160px;
+  background-color: #f9f9fb;
 `;

@@ -3,6 +3,7 @@ import React from "react";
 export type IconProps = {
   size?: number;
   color?: string;
+  onClick?: () => void;
 };
 const chevronRightIcon = ({ size = 20, color }: IconProps) => {
   return (

@@ -1,18 +1,17 @@
 import React from "react";
 import * as SC from "../styles/mandalart.styles";
-import * as FlexSC from "../styles/flex.styles";
 import Form from "../components/common/Form";
-import MandalartFormContent from "../components/MandalartFormContent";
 
-import Input from "../components/common/Input";
 import { INPUT_ERROR, INPUT_PLACEHOLDER } from "../data/formData";
 
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { step1State } from "../atoms/mandalartAtom";
-import MandalartBottom from "../components/MandalartBottom";
 import { errorButtonState } from "../atoms/errorAtom";
 
+import MandalartBottom from "../components/MandalartBottom";
+import Input from "../components/common/Input";
+import { useEffect } from "react";
 const Step1 = () => {
   const navigate = useNavigate();
   const setMainGoal = useSetRecoilState(step1State);

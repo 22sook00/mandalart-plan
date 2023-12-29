@@ -6,7 +6,7 @@ import * as SC from "../styles/mandalart.styles";
 import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useRecoilValue } from "recoil";
-import { step1State } from "../atoms/mandalartAtom";
+import { step1State, step2State } from "../atoms/mandalartAtom";
 
 interface MandalartFormContentProps {
   selectGoal: string;
@@ -27,11 +27,18 @@ MandalartFormContentProps) => {
   } = useFormContext();
 
   const mainGoal = useRecoilValue(step1State);
+  const subGoal = useRecoilValue(step2State);
 
   useEffect(() => {
     const mainValue = Object.values(mainGoal)[0];
     setValue("mainGoal", mainValue);
-  }, []);
+
+    //console.log(selectGoal, Object.values(subGoal));
+
+    Array.from({ length: 9 }).map((_, idx) => {
+      return setValue(`subGoal-${idx}`, Object.values(subGoal)[idx]);
+    });
+  }, [mainGoal, setValue, subGoal]);
 
   return (
     <SC.MandalartContentContainer>

@@ -1,5 +1,5 @@
 import React from "react";
-import { SookButton, SookFlex } from "react-sook-style";
+import { SookFlex } from "react-sook-style";
 import * as SC from "../styles/bottom.styles";
 import Progress from "./common/Progress";
 
@@ -12,12 +12,16 @@ interface MandalartBottomProps {
   prevDisabled?: boolean;
   nextDisabled?: boolean;
   prevUrl?: string;
+  prevText?: string;
+  nextText?: string;
 }
 
 const MandalartBottom = ({
   prevDisabled = false,
   nextDisabled = false,
   prevUrl = "/",
+  prevText = "이전",
+  nextText = "다음",
 }: MandalartBottomProps) => {
   const navigate = useNavigate();
 
@@ -35,14 +39,14 @@ const MandalartBottom = ({
             color={prevDisabled ? color.disabledText : color.textLight}
             size={14}
           />
-          Back
+          {prevText}
         </SC.BottomButton>
         <SC.BottomButton
           disabled={nextDisabled}
           position={"right"}
           type="submit"
         >
-          Next
+          {nextText}
           <ChevronRightIcon
             color={nextDisabled ? color.disabledText : color.textLight}
             size={14}
