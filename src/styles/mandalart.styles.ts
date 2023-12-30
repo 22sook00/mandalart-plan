@@ -172,6 +172,7 @@ export const MandalartCompleteContainer = styled.div`
   overflow: scroll;
   height: 100%;
   .sook_card {
+    width: 70px !important;
     height: 70px !important;
     min-height: 70px;
     white-space: nowrap;
@@ -208,8 +209,13 @@ export const MandalartGridContainer = styled(GridBox)<{ type?: string }>`
   margin-bottom: 160px;
   background-color: #f9f9fb;
   .sook_card {
-    width: ${({ type }) => (type === "my" ? "100px" : "70px")} !important;
+    p {
+      font-weight: ${({ type }) => (type === "my" ? 700 : 500)} !important;
+      font-size: ${({ type }) => (type === "my" ? "11px" : "10px")} !important;
+    }
+    /*width: ${({ type }) => (type === "my" ? "100px" : "70px")} !important;
     height: ${({ type }) => (type === "my" ? "100px" : "70px")} !important;
-    min-height: ${({ type }) => (type === "my" ? "100px" : "70px")} !important;
+    min-height: ${({ type }) =>
+      type === "my" ? "100px" : "70px"} !important;*/
   }
 `;
