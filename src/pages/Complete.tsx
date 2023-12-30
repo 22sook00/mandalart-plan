@@ -13,6 +13,7 @@ import * as SC from "../styles/mandalart.styles";
 
 const Complete = () => {
   const navigate = useNavigate();
+
   const getTotalGoal = useRecoilValue(step3State);
   const setCompleteGoal = useSetRecoilState(completeState);
   //console.log("getTOtal", getTotalGoal.getSubGoal);
@@ -22,6 +23,7 @@ const Complete = () => {
       Object.values(getTotalGoal.getSubGoal).length - 1
     )
   );
+
   const [detailList, setDetailList] = useState();
   const [updatedDetailList, setUpdatedDetailList] = useState<any>([]);
 
@@ -107,7 +109,7 @@ const Complete = () => {
                           }}
                           size="sm"
                         >
-                          {list}
+                          <p>{list}</p>
                         </SookCard>
                       </Fragment>
                     );
@@ -124,7 +126,7 @@ const Complete = () => {
                           }}
                           size="sm"
                         >
-                          {el}
+                          <p>{el}</p>
                         </SookCard>
                       </div>
                     );

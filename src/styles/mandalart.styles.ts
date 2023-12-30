@@ -37,7 +37,6 @@ export const MandalartTitle = styled.h1`
 export const MandalartSubTitle = styled.h3`
   font-weight: 800;
   font-size: 24px;
-
   color: ${color.lightGray};
 `;
 
@@ -163,6 +162,8 @@ export const MandalartStep3Card = styled.div<{ disabled?: boolean }>`
   .card-item {
     font-size: 24px;
     font-weight: 700;
+    width: 200px;
+    white-space: pre-line;
   }
 `;
 
@@ -182,17 +183,22 @@ export const MandalartCompleteContainer = styled.div`
       justify-content: center;
       height: 100%;
       padding: 0 4px !important;
-      font-size: 10px;
-      text-align: center;
-      line-height: 14px;
+
       white-space: normal !important;
 
       width: 70px;
       height: 70px !important;
 
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      p {
+        font-size: 10px;
+        text-align: center;
+        line-height: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        white-space: pre-line;
+      }
     }
   }
 `;

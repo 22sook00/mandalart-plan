@@ -55,7 +55,7 @@ const Step3 = () => {
             </SC.MandalartTitle>
             <SC.MandalartStep3List>
               <SookGrid col="repeat(3, 1fr)" gap={14}>
-                {goalArr.map((subArr, i) => {
+                {goalArr.slice(0, goalArr.length - 1).map((subArr, i) => {
                   return (
                     <SookFlex
                       col={false}
@@ -68,9 +68,10 @@ const Step3 = () => {
                         onClick={() =>
                           i !== 4 && handleSelectSubGoal(subArr[1] as string)
                         }
-                        //onClick={() => setSelectSubGoal(subArr[1] as string)}
                       >
-                        <div className="card-item">{`${subArr[1]}`}</div>
+                        <div className="card-item">
+                          <p>{`${subArr[1]}`}</p>
+                        </div>
                       </SC.MandalartStep3Card>
                     </SookFlex>
                   );

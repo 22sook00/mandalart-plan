@@ -11,7 +11,6 @@ import { errorButtonState } from "../atoms/errorAtom";
 
 import MandalartBottom from "../components/MandalartBottom";
 import Input from "../components/common/Input";
-import { useEffect } from "react";
 const Step1 = () => {
   const navigate = useNavigate();
   const setMainGoal = useSetRecoilState(step1State);
@@ -25,7 +24,7 @@ const Step1 = () => {
     <SC.MandalartContainer>
       <SC.MandalartStep1Wrapper>
         <SC.MandalartSubTitle>STEP 1.</SC.MandalartSubTitle>
-        <SC.MandalartTitle>🍒 핵심 목표를 입력해주세요.</SC.MandalartTitle>
+        <SC.MandalartTitle>🔥 핵심 목표를 입력해주세요.</SC.MandalartTitle>
 
         <SC.MandalartStep1FormWrapper>
           <Form onSubmit={handleSubmitGoal} type="mainGoal">

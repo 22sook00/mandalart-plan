@@ -18,6 +18,7 @@ import Step2 from "./pages/Step2";
 import Step3 from "./pages/Step3";
 import Complete from "./pages/Complete";
 import MyMandalart from "./pages/MyMandalart";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/my-mandalart",
     element: <MyMandalart />,
+  },
+  {
+    path: "/*",
+    element: <NotFound />,
   },
 ]);
 
