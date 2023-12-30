@@ -13,7 +13,7 @@ const MyMandalart = () => {
 
   return (
     <SC.MandalartCompleteContainer>
-      <SC.MandalartGridContainer col={"repeat(3, 1fr)"} gap={20}>
+      <SC.MandalartGridContainer type="my" col={"repeat(3, 1fr)"} gap={20}>
         {detailList?.map((list: any, idx: number) => {
           return (
             <>
@@ -29,7 +29,7 @@ const MyMandalart = () => {
                           }}
                           size="sm"
                         >
-                          {list}
+                          <p> {list}</p>
                         </SookCard>
                       </Fragment>
                     );
@@ -46,7 +46,7 @@ const MyMandalart = () => {
                           }}
                           size="sm"
                         >
-                          {el}
+                          <p>{el}</p>
                         </SookCard>
                       </div>
                     );

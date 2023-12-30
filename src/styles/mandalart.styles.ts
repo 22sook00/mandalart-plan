@@ -186,9 +186,6 @@ export const MandalartCompleteContainer = styled.div`
 
       white-space: normal !important;
 
-      width: 70px;
-      height: 70px !important;
-
       p {
         font-size: 10px;
         text-align: center;
@@ -197,16 +194,22 @@ export const MandalartCompleteContainer = styled.div`
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 100%;
+        word-break: keep-all;
         white-space: pre-line;
       }
     }
   }
 `;
-export const MandalartGridContainer = styled(GridBox)`
+export const MandalartGridContainer = styled(GridBox)<{ type?: string }>`
   border: 3px solid #f9f9fb !important;
   border-radius: 8px;
   padding: 20px 40px;
   margin-top: 20px;
   margin-bottom: 160px;
   background-color: #f9f9fb;
+  .sook_card {
+    width: ${({ type }) => (type === "my" ? "100px" : "70px")} !important;
+    height: ${({ type }) => (type === "my" ? "100px" : "70px")} !important;
+    min-height: ${({ type }) => (type === "my" ? "100px" : "70px")} !important;
+  }
 `;

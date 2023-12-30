@@ -55,7 +55,7 @@ const Step3 = () => {
             </SC.MandalartTitle>
             <SC.MandalartStep3List>
               <SookGrid col="repeat(3, 1fr)" gap={14}>
-                {goalArr.slice(0, goalArr.length - 1).map((subArr, i) => {
+                {goalArr.map((subArr, i) => {
                   return (
                     <SookFlex
                       col={false}

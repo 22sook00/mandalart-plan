@@ -37,9 +37,9 @@ export const globalStyles = css`
     box-sizing: border-box;
     font-family: "SUIT" !important;
   }
-  .hidden-scroll {
+  /*.hidden-scroll {
     overflow: hidden;
-  }
+  }*/
   *,
   :after,
   :before {
