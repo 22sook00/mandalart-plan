@@ -77,6 +77,8 @@ const Complete = () => {
     }
   }, [detailList, setCompleteGoal, subList]);
 
+  //console.log(updatedDetailList);
+
   return (
     <SC.MandalartCompleteContainer>
       <SC.MandalartTitle>만다라트가 완성되었습니다 🎉</SC.MandalartTitle>
@@ -139,7 +141,7 @@ const Complete = () => {
             </Fragment>
           );
         })}
-        <MandalartBottom nextText={"저장"} />
+        <MandalartBottom nextText={"저장"} prevUrl="/step3" />
       </SC.MandalartGridContainer>
     </SC.MandalartCompleteContainer>
   );

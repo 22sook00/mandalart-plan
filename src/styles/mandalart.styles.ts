@@ -245,10 +245,27 @@ export const MandalartCompleteContainer = styled.div`
   ${defaultLayout}
   overflow: scroll;
   height: 100%;
+  .button-wrapper {
+    width: 774px;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      background: #fff;
+      font-weight: 600;
+      border: 1px solid #d7dde7;
+      color: #5e6a7e;
+      padding: 8px 20px;
+      &:hover {
+        transition: all 0.3s;
+        background-color: ${color.hover};
+        font-weight: 700;
+      }
+    }
+  }
   .sook_card {
     width: 70px !important;
     height: 70px !important;
-    min-height: 70px;
+    min-height: 70px !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -257,7 +274,7 @@ export const MandalartCompleteContainer = styled.div`
       align-items: center;
       justify-content: center;
       height: 100%;
-      padding: 0 4px !important;
+      padding: 4px !important;
 
       white-space: normal !important;
 
@@ -265,9 +282,6 @@ export const MandalartCompleteContainer = styled.div`
         font-size: 10px;
         text-align: center;
         line-height: 14px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
         width: 100%;
         word-break: keep-all;
         white-space: pre-line;
@@ -283,9 +297,17 @@ export const MandalartGridContainer = styled(GridBox)<{ type?: string }>`
   margin-bottom: 160px;
   background-color: #f9f9fb;
   .sook_card {
+    width: ${({ type }) => (type === "my" ? "90px" : "70px")} !important;
+    height: ${({ type }) => (type === "my" ? "90px" : "70px")} !important;
+    min-height: ${({ type }) => (type === "my" ? "90px" : "70px")} !important;
     p {
+      line-height: 18px !important;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: ${({ type }) => (type === "my" ? 700 : 500)} !important;
-      font-size: ${({ type }) => (type === "my" ? "11px" : "10px")} !important;
+      font-size: ${({ type }) => (type === "my" ? "14px" : "10px")} !important;
     }
   }
 `;
@@ -293,5 +315,20 @@ export const MandalartGridContainer = styled(GridBox)<{ type?: string }>`
 export const MandalartNotFoundContainer = styled.div`
   .buttonContainer {
     margin-bottom: 30px;
+  }
+`;
+
+//완성만다라트
+
+export const MandalartCompleteCardWrapper = styled.div`
+  position: relative;
+`;
+export const MandalartCompleteArrowWrapper = styled.div`
+  position: absolute;
+  top: -150px;
+  left: 0;
+  svg {
+    width: 200px;
+    height: 100px;
   }
 `;

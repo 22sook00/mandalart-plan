@@ -30,10 +30,7 @@ MandalartFormContentProps) => {
   const subGoal = useRecoilValue(step2State);
 
   useEffect(() => {
-    const mainValue = Object.values(mainGoal)[0];
-    setValue("mainGoal", mainValue);
-
-    //console.log(selectGoal, Object.values(subGoal));
+    setValue("mainGoal", mainGoal);
 
     Array.from({ length: 9 }).map((_, idx) => {
       return setValue(`subGoal-${idx}`, Object.values(subGoal)[idx]);

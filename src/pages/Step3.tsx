@@ -51,7 +51,7 @@ const Step3 = () => {
           <SC.MandalartStep3ListContainer>
             <SC.MandalartSubTitle>STEP 3.</SC.MandalartSubTitle>
             <SC.MandalartTitle className="title">
-              세부목표 정하기
+              ☄️ 구체적인 행동 계획을 입력 하세요.
             </SC.MandalartTitle>
             <SC.MandalartStep3List>
               <SookGrid col="repeat(3, 1fr)" gap={14}>

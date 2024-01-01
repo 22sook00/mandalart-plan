@@ -103,6 +103,7 @@ export const DrawerBody = styled(FlexCol)<DialogType>`
     border-radius: 6px;
     padding: 4px;
     border: 1px solid ${color.border};
+    cursor: pointer;
   }
 `;
 export const DrawerTitle = styled.h3`
