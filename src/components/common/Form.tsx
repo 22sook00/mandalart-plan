@@ -21,6 +21,7 @@ const Form = ({ type, children, onSubmit }: FormProps) => {
     handleSubmit,
     formState: { errors },
   } = methods;
+
   useEffect(() => {
     const isError = Object.keys(errors)?.length ? true : false;
     setErrorButton(isError);

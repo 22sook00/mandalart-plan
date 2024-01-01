@@ -30,7 +30,11 @@ export const BottomButton = styled.button<{ position?: string }>`
   gap: 4px;
   padding: ${({ position }) =>
     position === "left" ? "6px 16px 6px 10px" : "6px 10px 6px 16px"};
-
+  &:hover {
+    transition: all 0.3s;
+    background-color: ${color.hover};
+    font-weight: 700;
+  }
   &:active {
     transition: all 0.4s;
     transform: scale(0.97);
