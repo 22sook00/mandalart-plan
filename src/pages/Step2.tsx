@@ -27,26 +27,26 @@ const Step2 = () => {
 
   return (
     <SC.MandalartContainer>
-      <Form onSubmit={handleSubmitSubGoal}>
-        <SookGrid col={"repeat(3, 230px)"} gap={12} justify="center">
-          {Array.from({ length: 9 }).map((_, idx) => {
-            return (
-              <Fragment key={`mandalartItem-${idx + 1}`}>
-                <MandalartFormContent
-                  title={
-                    idx === 4
-                      ? "🍒 핵심 목표를 입력해주세요."
-                      : "🍊 주요 목표를 입력해주세요."
-                  }
-                  readOnly={idx === 4}
-                  selectGoal={idx === 4 ? "mainGoal" : `subGoal-${idx}`}
-                />
-              </Fragment>
-            );
-          })}
-        </SookGrid>
-        <MandalartBottom prevUrl="/step1" nextDisabled={isError} />
-      </Form>
+      <SC.MandalartStep2Wrapper>
+        <SC.MandalartSubTitle>STEP 2.</SC.MandalartSubTitle>
+        <SC.MandalartTitle>🔥 목표를 이루기 위한 키워드</SC.MandalartTitle>
+        <Form onSubmit={handleSubmitSubGoal}>
+          <SookGrid col={"repeat(3, 230px)"} gap={12} justify="center">
+            {Array.from({ length: 9 }).map((_, idx) => {
+              return (
+                <Fragment key={`mandalartItem-${idx + 1}`}>
+                  <MandalartFormContent
+                    title={idx === 4 ? "🍒 핵심 목표" : "🍊 키워드"}
+                    readOnly={idx === 4}
+                    selectGoal={idx === 4 ? "mainGoal" : `subGoal-${idx}`}
+                  />
+                </Fragment>
+              );
+            })}
+          </SookGrid>
+          <MandalartBottom prevUrl="/step1" nextDisabled={isError} />
+        </Form>
+      </SC.MandalartStep2Wrapper>
     </SC.MandalartContainer>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as SC from "../styles/mandalart.styles";
 import Form from "../components/common/Form";
 

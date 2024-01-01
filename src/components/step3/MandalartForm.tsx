@@ -1,5 +1,5 @@
 import React, { SetStateAction } from "react";
-import { SookButton, SookFlex } from "react-sook-style";
+import { SookButton, SookCard, SookFlex, SookGrid } from "react-sook-style";
 import * as SC from "../../styles/mandalart.styles";
 import { EmojiData } from "../../data/initGoal";
 import Input from "../common/Input";
@@ -41,11 +41,15 @@ const MandalartForm = ({ selectSubGoal, setIsOpen }: MandalartFormProps) => {
     reset(savedDetailGoal.detail);
   }, [reset, savedDetailGoal]);
 
+  useEffect(() => {
+    setValue("selectSubGoal", selectSubGoal);
+  }, [selectSubGoal, setValue]);
+
   return (
     <SC.MandalartStep3FormContainer>
       <SC.MandalartStep3Form>
-        <SookFlex gap={12}>
-          {Array.from({ length: 8 }).map((_, i: number) => {
+        <SookGrid col="1fr 1fr 1fr" gap={12}>
+          {Array.from({ length: 9 }).map((_, i: number) => {
             return (
               <SookFlex
                 col={false}
@@ -54,21 +58,29 @@ const MandalartForm = ({ selectSubGoal, setIsOpen }: MandalartFormProps) => {
                 item="flex-start"
                 gap={10}
               >
-                <span className="icon">{EmojiData[i + 1]}</span>
-                <Input
-                  maxLength={40}
-                  placeholder={INPUT_PLACEHOLDER.detailGoal}
-                  value={`${selectSubGoal}-${i}`}
-                  required={{
-                    value: true,
-                    message: INPUT_ERROR.goal.empty,
-                  }}
-                  style={{ height: "43px" }}
-                />
+                {/*<span className="icon">{EmojiData[i + 1]}</span>*/}
+                {i === 4 ? (
+                  <SookCard>
+                    <Input
+                      value={"selectSubGoal"}
+                      style={{ height: "43px" }}
+                      readOnly={true}
+                    />
+                  </SookCard>
+                ) : (
+                  <SookCard>
+                    <Input
+                      maxLength={40}
+                      placeholder={INPUT_PLACEHOLDER.detailGoal}
+                      value={`${selectSubGoal}-${i}`}
+                      style={{ height: "43px" }}
+                    />
+                  </SookCard>
+                )}
               </SookFlex>
             );
           })}
-        </SookFlex>
+        </SookGrid>
         <SookFlex col={false} justify="flex-end">
           <SookButton
             customStyle={{ width: "100px" }}

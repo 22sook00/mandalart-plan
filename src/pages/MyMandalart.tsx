@@ -15,8 +15,9 @@ const MyMandalart = () => {
     <SC.MandalartCompleteContainer>
       <SC.MandalartGridContainer type="my" col={"repeat(3, 1fr)"} gap={20}>
         {detailList?.map((list: any, idx: number) => {
+          console.log("LIST", list, "SUB", subList);
           return (
-            <>
+            <Fragment key={`myMandalart-${idx}`}>
               {list === undefined ? (
                 <SookGrid col={"repeat(3, 1fr)"} gap={3} key={`detail-${idx}`}>
                   {subList.map((list: any, id: number) => {
@@ -29,7 +30,7 @@ const MyMandalart = () => {
                           }}
                           size="sm"
                         >
-                          <p> {list}</p>
+                          <p>{list}</p>
                         </SookCard>
                       </Fragment>
                     );
@@ -53,7 +54,7 @@ const MyMandalart = () => {
                   })}
                 </SookGrid>
               )}
-            </>
+            </Fragment>
           );
         })}
         {/*<MandalartBottom prevText={"메인"} nextText="PDF 저장" />*/}

@@ -18,6 +18,7 @@ export const color = {
   lightGray: "#c1c8cf",
   lightestGray: "#e4ebf4",
 
+  backgroundGray: "#eff3f8",
   hover: "#fafcff",
 
   defaultShadow:

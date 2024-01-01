@@ -65,6 +65,7 @@ const Complete = () => {
       const orderedDetailList = subList.map((item: any) => ({
         [item]: updatedData[item],
       }));
+
       setUpdatedDetailList(
         orderedDetailList?.map((el: any[]) => Object.values(el)[0])
       );
@@ -78,7 +79,7 @@ const Complete = () => {
 
   return (
     <SC.MandalartCompleteContainer>
-      <SC.MandalartTitle>만다르트가 완성되었습니다 🎉</SC.MandalartTitle>
+      <SC.MandalartTitle>만다라트가 완성되었습니다 🎉</SC.MandalartTitle>
       <SC.MandalartSubTitle>
         하나씩 실천해 나가며 성장하는, 멋진 2024년을 보내요!
       </SC.MandalartSubTitle>
@@ -91,12 +92,14 @@ const Complete = () => {
         size="lg"
         onClick={() => navigate("/my-mandalart")}
       >
-        완성된 만다르트 보러가기
+        완성된 만다라트 보러가기
       </SookButton>
       <SC.MandalartGridContainer col={"repeat(3, 1fr)"} gap={20}>
         {updatedDetailList?.map((list: any, idx: number) => {
+          //console.log(list);
+
           return (
-            <>
+            <Fragment key={`${list}-${idx}`}>
               {list === undefined ? (
                 <SookGrid col={"repeat(3, 1fr)"} gap={3} key={`detail-${idx}`}>
                   {subList.map((list: any, id: number) => {
@@ -133,7 +136,7 @@ const Complete = () => {
                   })}
                 </SookGrid>
               )}
-            </>
+            </Fragment>
           );
         })}
         <MandalartBottom nextText={"저장"} />

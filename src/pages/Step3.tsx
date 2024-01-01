@@ -20,6 +20,7 @@ import Drawer from "../components/common/Drawer";
 const Step3 = () => {
   const navigate = useNavigate();
   const setDetailGoal = useSetRecoilState(step3State);
+  const getDetailGoal = useRecoilValue(step3DetailState);
   const getSubGoal = useRecoilValue(step2State);
 
   const goalArr = Object.entries(getSubGoal);
@@ -33,11 +34,7 @@ const Step3 = () => {
     setSelectSubGoal(selectItem);
   };
 
-  //console.log("goalArr", goalArr);
-
   const handleSubmitTotalSubGoal = (data: any) => {
-    console.log("STEP@", data);
-
     //리코일에 두번째 스텝 넣기
     //넣은 후 스텝T3로 이동.
     setDetailGoal({ getSubGoal, data });
@@ -45,17 +42,22 @@ const Step3 = () => {
     navigate("/complete");
   };
 
+  //console.log("OBJ", Object.entries(getDetailGoal.detail));
+
   return (
     <SC.MandalartContainer>
       <Form onSubmit={handleSubmitTotalSubGoal}>
-        <SookGrid col="1fr 320px" gap={30} justify="center">
+        <SookGrid col="1fr 1fr" gap={30} justify="center">
           <SC.MandalartStep3ListContainer>
+            <SC.MandalartSubTitle>STEP 3.</SC.MandalartSubTitle>
             <SC.MandalartTitle className="title">
-              {getSubGoal.mainGoal}
+              세부목표 정하기
             </SC.MandalartTitle>
             <SC.MandalartStep3List>
               <SookGrid col="repeat(3, 1fr)" gap={14}>
-                {goalArr.map((subArr, i) => {
+                {goalArr.slice(0, goalArr.length - 1).map((subArr, i) => {
+                  //console.log("SUB", subArr[1]);
+
                   return (
                     <SookFlex
                       col={false}
@@ -71,6 +73,7 @@ const Step3 = () => {
                       >
                         <div className="card-item">
                           <p>{`${subArr[1]}`}</p>
+                          {i !== 4 && <SC.MandalartDesc>0/8</SC.MandalartDesc>}
                         </div>
                       </SC.MandalartStep3Card>
                     </SookFlex>

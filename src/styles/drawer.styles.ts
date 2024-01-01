@@ -75,6 +75,7 @@ export const DrawerLayer = styled(FlexCol)`
 export const DrawerContainer = styled.div<DialogType>`
   position: absolute;
   right: 0;
+  width: 750px;
   height: 100vh;
   display: flex;
   flex-direction: column;

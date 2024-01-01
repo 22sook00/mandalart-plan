@@ -9,6 +9,8 @@ export const BottomContainer = styled.div`
   right: 0;
   background-color: #fff;
   gap: 20px;
+  border-top: 1px solid ${color.border};
+  z-index: 100;
   ${defaultLayout}
 `;
 

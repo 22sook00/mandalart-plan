@@ -29,6 +29,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: 30px;
 `;
 export const InputContainer = styled.div`
   position: relative;
