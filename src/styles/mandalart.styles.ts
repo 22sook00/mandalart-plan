@@ -1,9 +1,21 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { SookFlex } from "react-sook-style";
-import { FlexCol } from "./flex.styles";
+
+import { keyframes } from "@emotion/react";
 import { color } from "./globalStyle";
 import { GridBox } from "./grid.styles";
+
+const bounce = keyframes`
+ 0%, 100% {
+    transform: translateY(-20%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+`;
 
 export type MandalartType = {
   step?: number;
@@ -290,7 +302,6 @@ export const MandalartCompleteContainer = styled.div`
   }
 `;
 export const MandalartGridContainer = styled(GridBox)<{ type?: string }>`
-  border: 3px solid #f9f9fb !important;
   border-radius: 8px;
   padding: 20px 40px;
   margin-top: 20px;
@@ -330,5 +341,58 @@ export const MandalartCompleteArrowWrapper = styled.div`
   svg {
     width: 200px;
     height: 100px;
+  }
+`;
+
+export const TempDiv = styled.div`
+  width: 300px;
+  height: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+  border-radius: 8px;
+`;
+export const TempSubDiv = styled.div<{ isMain?: boolean; isError?: boolean }>`
+  /*border: 3px solid blue;*/
+  /*border: 1px solid ${color.lightGray};*/
+  box-shadow: ${({ isMain, isError }) =>
+    isMain && !isError ? "0 0 10px #00a1ff" : color.defaultShadow};
+
+  border: ${({ isMain, isError }) =>
+    isError
+      ? `1px solid ${color.errorText} `
+      : isMain && !isError
+      ? "2px solid #00a1ff"
+      : `2px solid #fff`} !important;
+
+  /*box-shadow: ${color.defaultShadow};*/
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: ${({ isMain }) => (isMain ? "16px" : "14px")};
+  }
+  color: ${({ isMain }) => (isMain ? "red" : "blue")};
+`;
+
+export const DownArrowContainer = styled.div`
+  /*background: linear-gradient(90deg, #17b9aa, #00a1ff, #06b6d4);*/
+  border-radius: 50%;
+  background-color: ${color.backgroundGray};
+  padding: 4px;
+  cursor: pointer;
+  animation: ${bounce} 1s infinite;
+  position: absolute;
+  bottom: 10px;
+  box-shadow: ${color.defaultShadow};
+
+  svg {
+    color: ${color.textLight};
+    stroke-width: 1px;
+    width: 32px;
+    height: 32px;
+    transform: rotate(90deg);
   }
 `;

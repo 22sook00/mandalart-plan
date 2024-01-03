@@ -27,6 +27,7 @@ const commonInput = css`
 export const FormContainer = styled.form`
   width: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 20px;
   margin-top: 30px;
@@ -34,7 +35,7 @@ export const FormContainer = styled.form`
 export const InputContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 62px;
+  max-width: 94px;
 `;
 export const InputLabelContainer = styled(FlexSC.FlexBox)`
   display: -webkit-box;
@@ -54,22 +55,13 @@ export const InputLabelContainer = styled(FlexSC.FlexBox)`
 
 export const InputForm = styled.input<InputType>`
   ${commonInput}
-  height: ${({ customHeight }) => customHeight ?? "42px"};
-
-  /*background-color: ${({ readOnly }) =>
-    readOnly ? color.lightestGray : "#fff"};*/
+  height:100%;
   cursor: ${({ readOnly }) => readOnly && "auto"};
   color: ${({ readOnly }) => (readOnly ? color.textLight : color.textDefault)};
 
   border: none;
-  border-bottom: ${({ errors }) =>
-    errors
-      ? `2px solid ${color.errorText} `
-      : `2px solid ${color.successText}`} !important;
-  border-radius: 0px !important;
-  border-bottom: ${({ readOnly }) =>
-    readOnly && `2px solid  #e0e4eb`} !important;
 
+  border-radius: 0px !important;
   padding: 4px;
   font-size: 16px;
 
@@ -77,8 +69,6 @@ export const InputForm = styled.input<InputType>`
   &:active {
     outline: none;
     transition: all 0.3s;
-    border-bottom: ${({ readOnly }) =>
-      readOnly && `2px solid  #e0e4eb`} !important;
   }
   &::placeholder {
     color: ${color.placeholderText};
@@ -90,28 +80,33 @@ export const TextareaForm = styled.textarea<InputType>`
   position: relative;
   resize: none;
   min-height: 86px;
-  max-height: 140px;
+  max-height: 100px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  border: none;
   padding: 10px;
   white-space: pre-line;
-  background-color: ${({ readOnly }) =>
-    readOnly ? color.lightestGray : "#fff"};
+  background-color: ${({ readOnly }) => (readOnly ? color.hover : "#fff")};
 
-  cursor: ${({ readOnly }) => readOnly && "auto"};
-  color: ${({ readOnly }) => (readOnly ? color.textLight : color.textDefault)};
-  border: ${({ errors }) =>
-    errors ? `1px solid ${color.errorText} ` : `1px solid #e0e4eb`} !important;
+  cursor: ${({ readOnly }) => readOnly && "default"};
+  color: ${({ readOnly }) =>
+    readOnly ? color.placeholderText : color.textDefault};
   border-radius: 0px;
   &:focus,
   &:active,
   &:hover {
     outline: none;
     transition: all 0.3s;
-
-    border: ${({ readOnly }) => readOnly && `1px solid  #e0e4eb`} !important;
   }
   &::placeholder {
-    color: ${color.placeholderText};
-    font-size: 12px;
+    color: ${color.disabledText};
+    font-size: 14px;
   }
 `;
 export const PwEyeIconWrapper = styled.div<LabelType>`
