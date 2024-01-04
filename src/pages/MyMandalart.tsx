@@ -18,7 +18,7 @@ const MyMandalart = () => {
 
     try {
       const div = captureRef.current;
-      const canvas = await html2canvas(div, { scale: 2 });
+      const canvas = await html2canvas(div, { scale: 1 });
       canvas.toBlob((blob) => {
         if (blob !== null) {
           saveAs(blob, "mandalart.png");
