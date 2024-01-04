@@ -7,6 +7,7 @@ type FlexType = {
 };
 
 export const FlexBox = styled.div<FlexType>`
+  width: fit-content;
   display: flex;
   justify-content: ${({ justify }) => justify ?? "flex-start"};
   align-items: ${({ items }) => items ?? "flex-start"};

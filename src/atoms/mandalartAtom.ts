@@ -43,6 +43,12 @@ export const completeState = atom({
   effects: [localStorageEffect("complete_goal")],
 });
 
+export const mymandalartState = atom({
+  key: "mymandalartState",
+  default: {} as any,
+  effects: [localStorageEffect("my_mandalart")],
+});
+
 //export const step1State = atom({
 //  key: "step1State", // unique ID (with respect to other atoms/selectors)
 //  default: "", // default value (aka initial value)

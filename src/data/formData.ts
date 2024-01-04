@@ -8,9 +8,9 @@ export const INPUT_VALIDATION = {
 };
 
 export const INPUT_PLACEHOLDER = {
-  mainGoal: "핵심 목표를 입력해 주세요.",
-  goal: "목표를 이루기 위한 키워드",
-  detailGoal: "세부 목표를 입력해 주세요.",
+  mainGoal: "핵심 목표",
+  goal: "목표 키워드",
+  detailGoal: "세부 목표",
   birth: { year: "생일연도(4자)", month: "월", day: "일" },
 };
 export const INPUT_ERROR = {

@@ -7,7 +7,7 @@ export const MandalartInitType = {
   includes: [],
 };
 
-export const MandalartData = [
+export const MandalartTempData = [
   {
     id: 1,
     isMain: false,
@@ -145,7 +145,68 @@ export const MandalartData = [
     ],
   },
 ];
+//정 가운데 들어가야 할 메인데이터 생성
+export const MandalartData = [
+  {
+    id: 1,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+  {
+    id: 2,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+  {
+    id: 3,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+  {
+    id: 4,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+  { id: 5, isMain: true, goal: "", desc: "" },
+  {
+    id: 6,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+  {
+    id: 7,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+  {
+    id: 8,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+  {
+    id: 9,
+    isMain: false,
+    goal: "",
+    desc: "",
+    includes: [],
+  },
+];
 
+export const MandalartDetailData = [{ id: 1, isSub: false }];
 export const EmojiData: { [key: number]: string } = {
   1: "🔥",
   2: "✨",

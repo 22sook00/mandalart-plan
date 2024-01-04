@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 export const color = {
-  main: "#06b6d4",
+  main: "#00a1ff",
   sub: "#db2777",
 
   textDark: "#0f172a",
@@ -48,14 +48,7 @@ export const globalStyles = css`
     flex-shrink: 0;
   }
   :root {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    cursor: default;
-    line-height: 1.5;
-    overflow-wrap: break-word;
-    -moz-tab-size: 4;
-    tab-size: 4;
+    box-sizing: border-box;
   }
   html {
     font-family: "SUIT", "Noto Sans", sans-serif;
