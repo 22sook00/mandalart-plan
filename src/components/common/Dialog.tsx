@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import * as SC from "../../styles/dialog.styles";
-import { SookButton } from "react-sook-style";
+
 import CloseIcon from "src/components/common/icons/CloseIcon";
 
 interface DialogProps {

@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { SookFlex } from "react-sook-style";
 
 import { keyframes } from "@emotion/react";
 import { color } from "./globalStyle";
