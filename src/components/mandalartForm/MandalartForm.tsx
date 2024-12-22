@@ -1,7 +1,7 @@
-import { Fragment, memo, useEffect, useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import { SookGrid } from "react-sook-style";
 
-import { FormProvider, useForm, useWatch } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import html2canvas from "html2canvas";
 import saveAs from "file-saver";
 
@@ -22,7 +22,7 @@ const MandalartForm = () => {
   const setMyMandalart = useSetRecoilState(mymandalartState);
   const getMyMandalart = useRecoilValue(mymandalartState);
   const [isOpen, setIsOpen] = useRecoilState(mobileBottomSheet);
-  const [isShow, setIsShow] = useState(false);
+
   const methods = useForm<any>({
     mode: "onChange",
     defaultValues: getMyMandalart ?? MandalartFormValueType,
@@ -41,7 +41,6 @@ const MandalartForm = () => {
 
   const handleSaveImage = async () => {
     if (!captureRef.current) return;
-    setIsShow(true);
 
     try {
       const div = captureRef.current;

@@ -16,34 +16,6 @@ const localStorageEffect =
     });
   };
 
-export const step1State = atom({
-  key: "step1State",
-  default: "",
-  effects: [localStorageEffect("main_goal")],
-});
-export const step2State = atom({
-  key: "step2State",
-  default: {} as any,
-  effects: [localStorageEffect("sub_goal")],
-});
-export const step3DetailState = atom({
-  key: "step3DetailState",
-  default: { detail: {} },
-  effects: [localStorageEffect("detail_goal")],
-});
-
-export const step3State = atom({
-  key: "step3State",
-  default: {} as any,
-  effects: [localStorageEffect("total_goal")],
-});
-
-export const completeState = atom({
-  key: "completeState",
-  default: {} as any,
-  effects: [localStorageEffect("complete_goal")],
-});
-
 export const mymandalartState = atom({
   key: "mymandalartState",
   default: MandalartFormValueType as any,

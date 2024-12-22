@@ -1,9 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-import { keyframes } from "@emotion/react";
 import { color } from "./globalStyle";
-import { GridBox } from "./grid.styles";
 
 export type MandalartType = {
   step?: number;

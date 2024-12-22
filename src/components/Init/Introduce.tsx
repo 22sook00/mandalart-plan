@@ -1,4 +1,3 @@
-import React from "react";
 import { SookGrid } from "react-sook-style";
 import * as SC from "../../styles/mandalart.styles";
 const Introduce = () => {

@@ -1,47 +1,10 @@
-import { SookFlex, SookGrid } from "react-sook-style";
-import Introduce from "./Introduce";
 import MandalartForm from "../mandalartForm/MandalartForm";
-import QuestionMarkIcon from "../common/icons/questionMark";
 import * as SC from "../../styles/mandalartForm.styles";
-import Tooltip from "../common/Tooltip";
-import { useState } from "react";
-import {
-  tooltipHidden,
-  tooltipVisible,
-  tooltipWrapper,
-} from "../../styles/tooltip.styles";
 import { FlexBox } from "../../styles/flex.styles";
 
 const Init = () => {
-  const [isHover, setIsHover] = useState(false);
   return (
     <SC.MandalartContainer>
-      {/*<SC.IntroSection>
-        <SC.MandalartSubTitle>작은 목표가 만드는 큰 변화,</SC.MandalartSubTitle>
-        <SC.GradationTitle>mandalart</SC.GradationTitle>
-        <FlexBox items="center" gap={2}>
-          <SC.MandalartDesc>만다라트란?</SC.MandalartDesc>
-          <SC.SvgWrapper
-            onMouseEnter={() => setIsHover(true)}
-            onMouseLeave={() => setIsHover(false)}
-          >
-            <QuestionMarkIcon />
-            {isHover && (
-              <Tooltip
-                className={[
-                  tooltipWrapper,
-                  isHover ? tooltipVisible : tooltipHidden,
-                ]}
-                position={["left", "top"]}
-                topLocate={20}
-                rightLocate={40}
-              >
-                <Introduce />
-              </Tooltip>
-            )}
-          </SC.SvgWrapper>
-        </FlexBox>
-      </SC.IntroSection>*/}
       <MandalartForm />
       <SC.MandalartFooter>
         <a

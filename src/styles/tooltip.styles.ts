@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { color } from "./globalStyle";
 import { keyframes } from "@emotion/react";
-import { FlexBox, FlexCol } from "./flex.styles";
+
 import { TooltipProps } from "../components/common/Tooltip";
 
 const fadeIn = keyframes`
