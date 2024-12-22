@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+ 
     "target": "es5",
     "lib": [
       "dom",
@@ -22,17 +23,15 @@
     
     "baseUrl": ".",
     "paths": {
-      "@/styles/*": [
-        "styles/*"
-      ],
-      "@/components/*": [
-        "src/components/*"
-      ],
-      "@/data/*": [
-        "src/data/*"
-      ],
-    }
+      "@/*": ["src/*"],
+      "@/src/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/data/*": ["./src/data/*"],
+    },
+    
   },
-  "include": [ "src", "**/*.ts", "**/*.tsx" ],
+
+  "include": [ "src", "**/*.ts", "**/*.tsx", ],
 
 }

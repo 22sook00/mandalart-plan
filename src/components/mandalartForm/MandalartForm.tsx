@@ -1,5 +1,5 @@
 import { memo, useRef, useState } from "react";
-//import { SookGrid } from "react-sook-style";
+import { SookGrid } from "react-sook-style";
 
 import { FormProvider, useForm } from "react-hook-form";
 import html2canvas from "html2canvas";
@@ -13,7 +13,7 @@ import { mobileBottomSheet, mymandalartState } from "../../atoms/mandalartAtom";
 import * as FormSC from "../../styles/input.styles";
 import * as SC from "../../styles/mandalartForm.styles";
 import { MandalartFormValueType } from "../../data/defaultValue";
-//import MandalartFormItem from "../../components/mandalartForm/MandalartFormItem";
+import MandalartFormItem from "../../components/mandalartForm/MandalartFormItem";
 import MandalartMobileBottomSheet from "../../components/mandalartForm/MandalartMobileBottomSheet";
 import Dialog from "src/components/common/Dialog";
 
@@ -85,7 +85,7 @@ const MandalartForm = () => {
               작은 목표가 만드는 큰 변화,
             </SC.MandalartSubTitle>
             <SC.MandalartTitle>✨ My Mandalart 2025 </SC.MandalartTitle>
-            {/*<SookGrid col={"repeat(3, 1fr)"} gap={12}>
+            <SookGrid col={"repeat(3, 1fr)"} gap={12}>
               <MandalartFormItem value={"leftTop"} />
               <MandalartFormItem value={"top"} />
               <MandalartFormItem value={"rightTop"} />
@@ -95,7 +95,7 @@ const MandalartForm = () => {
               <MandalartFormItem value={"leftBottom"} />
               <MandalartFormItem value={"bottom"} />
               <MandalartFormItem value={"rightBottom"} />
-            </SookGrid>*/}
+            </SookGrid>
           </SC.ImageSection>
 
           <MandalartMobileBottomSheet
