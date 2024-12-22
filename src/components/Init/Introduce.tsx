@@ -6,7 +6,7 @@ const Introduce = () => {
     <SookGrid
       gap={10}
       item={"center"}
-      col={"420px"}
+      col={"350px"}
       customStyle={{ height: "fit-content", width: "fit-content" }}
     >
       <SC.MandalartList>

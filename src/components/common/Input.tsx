@@ -43,32 +43,30 @@ const Input = ({
     value.length > maxLength ? value.slice(0, maxLength) : value;
 
   return (
-    <>
-      <SC.MandalartContent
-        isMain={isMain}
-        readOnly={readOnly}
-        errors={errors[value] || errFocus}
-        placeholder={placeholder}
-        {...register(value, {
-          validate: validateFunc && {
-            check: validateFunc,
-          },
-          pattern: validatePattern,
-          onBlur: blurEvent,
-          onChange: (e) => {
-            if (maxLength)
-              setValue(value, getMaxLengthValue(e.target.value), {
-                shouldValidate: true,
-                shouldDirty: true,
-              });
-            if (changeEvent) changeEvent(e);
-          },
-          required: required,
-        })}
-        maxLength={maxLength}
-        style={style}
-      />
-    </>
+    <SC.MandalartContent
+      isMain={isMain}
+      readOnly={readOnly}
+      errors={errors[value] || errFocus}
+      placeholder={placeholder}
+      {...register(value, {
+        validate: validateFunc && {
+          check: validateFunc,
+        },
+        pattern: validatePattern,
+        onBlur: blurEvent,
+        onChange: (e) => {
+          if (maxLength)
+            setValue(value, getMaxLengthValue(e.target.value), {
+              shouldValidate: true,
+              shouldDirty: true,
+            });
+          if (changeEvent) changeEvent(e);
+        },
+        required: required,
+      })}
+      maxLength={maxLength}
+      style={style}
+    />
   );
 };
 

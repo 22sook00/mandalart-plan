@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import * as SC from "../../styles/dialog.styles";
 import { SookButton } from "react-sook-style";
-import { useFormContext } from "react-hook-form";
+import CloseIcon from "src/components/common/icons/CloseIcon";
 
 interface DialogProps {
   handleClosePopup: any;
   children: React.ReactNode;
   description?: string;
   customHeight?: string;
+  isXIcon?: boolean;
 }
 
 const Dialog = ({
@@ -16,6 +17,7 @@ const Dialog = ({
   children,
   description,
   customHeight,
+  isXIcon = false,
 }: DialogProps) => {
   const ref = useRef<any>();
   const [mounted, setMounted] = useState(false);
@@ -36,6 +38,11 @@ const Dialog = ({
       <SC.CardPopupLayer>
         <SC.PopupBackground onClick={handleClosePopup} />
         <SC.CardPopupContainer>
+          {isXIcon && (
+            <SC.CardPopupCloseContainer onClick={handleClosePopup}>
+              <CloseIcon />
+            </SC.CardPopupCloseContainer>
+          )}
           <SC.CardPopupBody customHeight={customHeight}>
             {children}
           </SC.CardPopupBody>

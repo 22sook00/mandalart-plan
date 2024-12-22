@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -22,15 +22,17 @@
     
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@/src/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/styles/*": ["./src/styles/*"],
-      "@/data/*": ["./src/data/*"],
-    },
-    
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/data/*": [
+        "src/data/*"
+      ],
+    }
   },
-
-  "include": [ "src", "**/*.ts", "**/*.tsx", ],
+  "include": [ "src", "**/*.ts", "**/*.tsx" ],
 
 }

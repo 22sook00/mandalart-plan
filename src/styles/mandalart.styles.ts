@@ -74,6 +74,7 @@ export const MandalartList = styled.ul`
   li {
     color: ${color.textLight};
     font-size: 12px;
+    line-height: 18px;
     word-break: keep-all;
     white-space: pre-line;
     list-style: none;
@@ -390,7 +391,7 @@ export const DownArrowContainer = styled.div`
 
   svg {
     color: ${color.textLight};
-    stroke-width: 1px;
+    strokewidth: 1px;
     width: 32px;
     height: 32px;
     transform: rotate(90deg);

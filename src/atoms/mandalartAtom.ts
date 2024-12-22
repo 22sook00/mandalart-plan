@@ -1,3 +1,4 @@
+import { MandalartFormValueType } from "../data/defaultValue";
 import { atom } from "recoil";
 
 const localStorageEffect =
@@ -45,8 +46,21 @@ export const completeState = atom({
 
 export const mymandalartState = atom({
   key: "mymandalartState",
-  default: {} as any,
+  default: MandalartFormValueType as any,
   effects: [localStorageEffect("my_mandalart")],
+});
+
+export const mobileBottomSheet = atom({
+  key: "mobileBottomSheet",
+  default: false,
+});
+export const mobileSelectCell = atom({
+  key: "mobileSelectCell",
+  default: {
+    value: "",
+    idx: 0,
+    type: "center",
+  },
 });
 
 //export const step1State = atom({

@@ -26,21 +26,15 @@ export const color = {
 };
 
 export const globalStyles = css`
-  @font-face {
-    font-family: "SUIT";
-    src: url("./fonts/SUIT-Regular.ttf");
-  }
-  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
   * {
     margin: 0;
     padding: 0;
     font: inherit;
     box-sizing: border-box;
-    font-family: "SUIT" !important;
+    font-family: "pretendard" !important;
   }
-  /*.hidden-scroll {
-    overflow: hidden;
-  }*/
+
   *,
   :after,
   :before {
@@ -51,7 +45,7 @@ export const globalStyles = css`
     box-sizing: border-box;
   }
   html {
-    font-family: "SUIT", "Noto Sans", sans-serif;
+    font-family: "Pretendard", "Noto Sans", sans-serif;
   }
   html,
   body {

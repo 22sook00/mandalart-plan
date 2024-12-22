@@ -74,6 +74,7 @@ export const CardPopupLayer = styled(FlexCol)`
 `;
 export const CardPopupContainer = styled.div<DialogType>`
   position: relative;
+  min-width: 300px;
   /*width: ${({ customStyle }) => (customStyle ? customStyle : "340px")};*/
   display: flex;
   flex-direction: column;
@@ -98,9 +99,16 @@ export const CardPopupContainer = styled.div<DialogType>`
     padding: 20px 15px;
   }
 `;
+export const CardPopupCloseContainer = styled.div`
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`;
 export const CardPopupBody = styled(FlexBox)<DialogType>`
   height: ${({ customHeight }) => (customHeight ? customHeight : "100%")};
   overflow-y: auto;
+  width: 100%;
   > div {
     height: 100%;
   }
@@ -119,7 +127,7 @@ export const CardPopupClose = styled.div`
     height: 32px;
 
     path {
-      stroke-width: 2px;
+      strokewidth: 2px;
     }
   }
 `;
@@ -235,7 +243,7 @@ export const PopupClose = styled.div`
     height: 32px;
 
     path {
-      stroke-width: 2px;
+      strokewidth: 2px;
       fill: ${color.lightGray};
     }
   }
