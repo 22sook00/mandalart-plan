@@ -19,6 +19,7 @@
     "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "react-sook-style": "^0.1.1",
+    "typescript": "^4.9.5",
     "recoil": "^0.7.7",
     "web-vitals": "^2.1.4"
   },
@@ -49,7 +50,6 @@
   "devDependencies": {
     "@types/file-saver": "^2.0.7",
     "@types/node": "^22.10.2",
-    "ajv": "^7.2.4",
-    "typescript": "^5.7.2"
+    "ajv": "^7.2.4"
   }
 }
