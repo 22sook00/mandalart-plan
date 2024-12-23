@@ -1,4 +1,3 @@
-import React from "react";
 import { SookGrid } from "react-sook-style";
 import * as SC from "../../styles/mandalart.styles";
 const Introduce = () => {
@@ -6,7 +5,7 @@ const Introduce = () => {
     <SookGrid
       gap={10}
       item={"center"}
-      col={"420px"}
+      col={"350px"}
       customStyle={{ height: "fit-content", width: "fit-content" }}
     >
       <SC.MandalartList>

@@ -126,7 +126,7 @@ export const DrawerClose = styled.div`
     height: 32px;
 
     path {
-      stroke-width: 2px;
+      strokewidth: 2px;
     }
   }
 `;
@@ -242,7 +242,7 @@ export const PopupClose = styled.div`
     height: 32px;
 
     path {
-      stroke-width: 2px;
+      strokewidth: 2px;
       fill: ${color.lightGray};
     }
   }

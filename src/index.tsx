@@ -1,4 +1,3 @@
-import React from "react";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/styles/globalStyle";
 import ReactDOM from "react-dom/client";
@@ -25,10 +24,10 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <>
     <RecoilRoot>
       <RouterProvider router={router} />
       <Global styles={globalStyles} />
     </RecoilRoot>
-  </React.StrictMode>
+  </>
 );

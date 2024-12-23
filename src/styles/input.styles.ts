@@ -30,7 +30,9 @@ export const FormContainer = styled.form`
   position: relative;
   flex-direction: column;
   gap: 20px;
-  margin-top: 30px;
+  @media (max-width: 414px) {
+    gap: 30px;
+  }
 `;
 export const InputContainer = styled.div`
   position: relative;

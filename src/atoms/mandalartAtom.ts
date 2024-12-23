@@ -1,3 +1,4 @@
+import { MandalartFormValueType } from "../data/defaultValue";
 import { atom } from "recoil";
 
 const localStorageEffect =
@@ -15,56 +16,21 @@ const localStorageEffect =
     });
   };
 
-export const step1State = atom({
-  key: "step1State",
-  default: "",
-  effects: [localStorageEffect("main_goal")],
-});
-export const step2State = atom({
-  key: "step2State",
-  default: {} as any,
-  effects: [localStorageEffect("sub_goal")],
-});
-export const step3DetailState = atom({
-  key: "step3DetailState",
-  default: { detail: {} },
-  effects: [localStorageEffect("detail_goal")],
-});
-
-export const step3State = atom({
-  key: "step3State",
-  default: {} as any,
-  effects: [localStorageEffect("total_goal")],
-});
-
-export const completeState = atom({
-  key: "completeState",
-  default: {} as any,
-  effects: [localStorageEffect("complete_goal")],
-});
-
 export const mymandalartState = atom({
   key: "mymandalartState",
-  default: {} as any,
+  default: MandalartFormValueType as any,
   effects: [localStorageEffect("my_mandalart")],
 });
 
-//export const step1State = atom({
-//  key: "step1State", // unique ID (with respect to other atoms/selectors)
-//  default: "", // default value (aka initial value)
-//});
-
-//export const step2State = atom({
-//  key: "step2State", // unique ID (with respect to other atoms/selectors)
-//  default: {} as any, // default value (aka initial value)
-//});
-
-//export const step3DetailState = atom({
-//  key: "step3DetailState", // unique ID (with respect to other atoms/selectors)
-//  default: { detail: {} }, // default value (aka initial value)
-//});
-
-//export const step3State = atom({
-//  key: "step3State", // unique ID (with respect to other atoms/selectors)
-//  default: {} as any, // default value (aka initial value)
-//});
+export const mobileBottomSheet = atom({
+  key: "mobileBottomSheet",
+  default: false,
+});
+export const mobileSelectCell = atom({
+  key: "mobileSelectCell",
+  default: {
+    value: "",
+    idx: 0,
+    type: "center",
+  },
+});

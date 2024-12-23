@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { SookButton, SookFlex } from "react-sook-style";
 import * as SC from "../styles/mandalart.styles";
