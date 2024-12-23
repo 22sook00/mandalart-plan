@@ -34,23 +34,3 @@ export const mobileSelectCell = atom({
     type: "center",
   },
 });
-
-//export const step1State = atom({
-//  key: "step1State", // unique ID (with respect to other atoms/selectors)
-//  default: "", // default value (aka initial value)
-//});
-
-//export const step2State = atom({
-//  key: "step2State", // unique ID (with respect to other atoms/selectors)
-//  default: {} as any, // default value (aka initial value)
-//});
-
-//export const step3DetailState = atom({
-//  key: "step3DetailState", // unique ID (with respect to other atoms/selectors)
-//  default: { detail: {} }, // default value (aka initial value)
-//});
-
-//export const step3State = atom({
-//  key: "step3State", // unique ID (with respect to other atoms/selectors)
-//  default: {} as any, // default value (aka initial value)
-//});

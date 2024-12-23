@@ -1,13 +1,11 @@
 import { memo, useRef, useState } from "react";
 import { SookGrid } from "react-sook-style";
-
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { FormProvider, useForm } from "react-hook-form";
 import html2canvas from "html2canvas";
 import saveAs from "file-saver";
 
 import { FlexBox, FlexCol } from "../../styles/flex.styles";
-
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { mobileBottomSheet, mymandalartState } from "../../atoms/mandalartAtom";
 
 import * as FormSC from "../../styles/input.styles";
@@ -15,7 +13,7 @@ import * as SC from "../../styles/mandalartForm.styles";
 import { MandalartFormValueType } from "../../data/defaultValue";
 import MandalartFormItem from "../../components/mandalartForm/MandalartFormItem";
 import MandalartMobileBottomSheet from "../../components/mandalartForm/MandalartMobileBottomSheet";
-import Dialog from "src/components/common/Dialog";
+import Dialog from "../common/Dialog";
 
 const MandalartForm = () => {
   const captureRef = useRef<HTMLDivElement>(null);

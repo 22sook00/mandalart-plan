@@ -1,10 +1,9 @@
-import CloseIcon from "../common/icons/CloseIcon";
 import styled from "@emotion/styled";
 import { useMemo } from "react";
 import { useRecoilValue } from "recoil";
-import Input from "src/components/common/Input";
-import { mobileSelectCell } from "src/atoms/mandalartAtom";
-import { FlexBox } from "src/styles/flex.styles";
+import Input from "../common/Input";
+import { mobileSelectCell } from "../../atoms/mandalartAtom";
+import { FlexBox } from "../../styles/flex.styles";
 import * as SC from "../../styles/mandalartForm.styles";
 
 const slideIn = `
@@ -37,11 +36,11 @@ const Sheet = styled.div<{ isOpen: boolean }>`
   border-top-right-radius: 1rem;
   padding: 20px 16px 30px;
   z-index: 50;
-  transform: translateY(${(props) => (props.isOpen ? "0" : "100%")});
+  transform: translateY(${(props: any) => (props.isOpen ? "0" : "100%")});
   transition: transform 0.3s ease-out;
 
   min-height: 160px;
-  ${(props) => props.isOpen && slideIn};
+  ${(props: any) => props.isOpen && slideIn};
 `;
 
 const SheetHandle = styled.div`

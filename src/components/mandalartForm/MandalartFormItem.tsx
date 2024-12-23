@@ -1,11 +1,11 @@
-import React, { useState, Fragment, FC, useEffect, useMemo, memo } from "react";
+import { useState, Fragment, FC, useEffect, useMemo } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 import { SookGrid } from "react-sook-style";
 import Input from "../common/Input";
 import * as SC from "../../styles/mandalartForm.styles";
 
 import { useSetRecoilState } from "recoil";
-import { mobileBottomSheet, mobileSelectCell } from "src/atoms/mandalartAtom";
+import { mobileBottomSheet, mobileSelectCell } from "../../atoms/mandalartAtom";
 
 interface MandalartFormContentProps {
   value: string;

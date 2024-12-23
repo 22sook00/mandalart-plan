@@ -1,4 +1,3 @@
-import React from "react";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/styles/globalStyle";
 import ReactDOM from "react-dom/client";
